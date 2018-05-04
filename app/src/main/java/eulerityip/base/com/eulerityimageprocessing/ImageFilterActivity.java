@@ -378,8 +378,6 @@ public class ImageFilterActivity extends AppCompatActivity implements FiltersLis
             paintText.setColor(selectedColor);
             paintText.setTextSize(ImageUtils.dpToPx(16, getApplication()));
             paintText.setStyle(Paint.Style.FILL);
-            // For shadowing effect
-            paintText.setShadowLayer(10f, 10f, 10f, Color.BLACK);
 
             canvas.drawText(captionString, xPos, yPos, paintText);
             filteredImage = newBitmap;
@@ -435,7 +433,7 @@ public class ImageFilterActivity extends AppCompatActivity implements FiltersLis
                         Log.i(TAG, "JSON Response : " + response.body().string());
                         mUploadSavedImageURL = responseJsonObject.optString(ImageProcessingConstants.URL);
                         Log.i(TAG, "Get URL for UPLOAD : " + mUploadSavedImageURL);
-                        //uploadFilteredAndSavedImage();
+                        uploadFilteredAndSavedImage();
                     } else
                         generateToastMessage("id", R.string.something_went_wrong);
 

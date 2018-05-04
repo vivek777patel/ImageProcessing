@@ -271,6 +271,7 @@ public class ImageFilterActivity extends AppCompatActivity implements FiltersLis
     }
 
     private void resetControls() {
+        mTouchPointTextMap.clear();
         filteredImage = originalImage.copy(Bitmap.Config.ARGB_8888, true);
         mImageView.setImageBitmap(filteredImage);
         finalImage = filteredImage.copy(Bitmap.Config.ARGB_8888, true);
